@@ -1,0 +1,233 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.4); 
+}
+
+.gradient-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)); */
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 150px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 1.9s ease-in-out;
+}
+
+h1 {
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #fff;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.input-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.input-section input,
+.input-section select,
+.input-section button {
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+}
+
+.input-section input {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.input-section select {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.input-section button {
+    background-color: #ff7e5f;
+    color: #fff;
+    cursor: pointer;
+}
+
+.input-section button:hover {
+    background-color: #feb47b;
+    transform: scale(1.05);
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#taskList li {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+#taskList li.priority-high {
+    border-left: 8px solid #e74c3c;
+}
+
+#taskList li.priority-medium {
+    border-left: 8px solid #f39c12;
+}
+
+#taskList li.priority-low {
+    border-left: 8px solid #2ecc71;
+}
+
+#taskList li.completed {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+#taskList li:hover {
+    background-color: #eee;
+    transform: scale(1.02);
+}
+
+#searchInput {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 25px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+#taskList li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+}
+
+#taskList li button.edit {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+#taskList li button:hover {
+    color: #e74c3c;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 120px auto;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .input-section input,
+    .input-section select,
+    .input-section button {
+        font-size: 14px;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    #taskList li {
+        padding: 12px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+    }
+
+    #taskList li button {
+        margin-top: 10px;
+    }
+
+    #searchInput {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .input-section input,
+    .input-section select,
+    .input-section button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    #taskList li {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    #taskList li button {
+        margin-top: 8px;
+    }
+
+    #searchInput {
+        padding: 8px;
+    }
+}
